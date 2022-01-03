@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+
+  app:
+    image: ${DOCKER_API_IMAGE}:${DOCKER_API_TAG}
+    build:
+      context: ./app
+    container_name: ${DOCKER_API_IMAGE}
+    ports:
+      - 8000:8000
+
+  db:
+    image: ${DOCKER_DB_IMAGE}:${DOCKER_DB_TAG}
+    build:
+      context: ./database
+    container_name: ${DOCKER_DB_IMAGE}
+    ports:
+      - 27017:27017
+    env_file:
+      - ./database/.env
