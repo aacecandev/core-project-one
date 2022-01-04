@@ -40,3 +40,4 @@ https://github.com/pmowrer/semantic-release-monorepo/blob/master/package.json
 https://motor.readthedocs.io/en/stable/differences.html
 https://testdriven.io/blog/fastapi-mongo/
 https://github.com/encode/starlette/blob/master/starlette/status.py
+https://docs.python.org/3/library/functools.html#functools.lru_cache

@@ -17,4 +17,4 @@ indent_size = 4
 indent_style = tab
 
 [settings]
-known_third_party = streamlit
+known_third_party = asgi_lifespan,bson,docs,fastapi,httpx,models,motor,plotly,pydantic,pytest,requests,routers,settings,streamlit

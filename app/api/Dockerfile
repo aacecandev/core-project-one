@@ -62,7 +62,7 @@ USER ${NON_ROOT_USER}
 
 # Install python libraries
 COPY requirements.txt /app
-RUN pip install --upgrade pip --no-cache-dir && \
+RUN pip install --upgrade pip==21.3.1 --no-cache-dir && \
     pip install -r /app/requirements.txt --no-cache-dir
 
 # Change directory to /app to execute the app
