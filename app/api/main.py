@@ -8,11 +8,7 @@ settings = get_settings()
 
 
 def create_application() -> FastAPI:
-    app = FastAPI(
-        # docs_url=None,
-        # redoc_url=None,
-        # openapi_url=None
-    )
+    app = FastAPI()
     app.include_router(api_info_router, prefix="/info", tags=["info"])
     app.include_router(accidents_router, prefix="/accidents", tags=["accidents"])
     app.router.redirect_slashes = False
