@@ -1,4 +1,4 @@
-include $(PWD)/.env
+#include $(PWD)/.env
 SHELL := /usr/bin/bash
 .DEFAULT_GOAL := help
 
@@ -48,12 +48,17 @@ lint-docker-db: ## Lint the DB Dockerfile
 
 # Docker-compose
 # -------------------------------------------------------------------------
-.PHONY: run-app-attached
-run-app-attached: ## Run docker-compose with the terminal attached. Optional variables BUILDKIT, DOCKER_API_IMAGE, DOCKER_API_TAG, DOCKER_DB_IMAGE, DOCKER_DB_TAG
+.PHONY: run-app
+run-app: ## Run docker-compose with the terminal attached. Optional variables BUILDKIT, DOCKER_API_IMAGE, DOCKER_API_TAG, DOCKER_DB_IMAGE, DOCKER_DB_TAG
 	export BUILDKIT=$(or $(BUILDKIT_ENABLED),1) \
 		DOCKER_API_IMAGE=$(or $(DOCKER_API_IMAGE),core-api) \
 		DOCKER_API_TAG=$(or $(DOCKER_API_TAG),test) \
 		DOCKER_DB_IMAGE=$(or $(DOCKER_DB_IMAGE),core-db) \
 		DOCKER_DB_TAG=$(or $(DOCKER_DB_TAG),test) && \
-	docker-compose up --build --remove-orphans && docker-compose rm -fsv
-.DEFAULT_GOAL := run-app-attached
+	docker-compose up --build --remove-orphans
+.DEFAULT_GOAL := run-app
+
+.PHONY: rm-app
+rm-app: ## Remove docker-compose orphans
+	docker-compose rm -fsv
+.DEFAULT_GOAL := rm-app

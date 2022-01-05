@@ -13,7 +13,6 @@ def custom_openapi(app):
         title=docs_settings.title,
         version=docs_settings.version,
         description=docs_settings.description,
-        # terms_of_service=terms_of_service,
         tags=docs_settings.tags_metadata,
         routes=app.routes,
     )

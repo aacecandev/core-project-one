@@ -41,3 +41,7 @@ class AccidentPartialUpdateRequest(BaseModel):
         None, ge=0, lt=100, alias="vehicles_involved"
     )
     location: Optional[Location] = Field(None, alias="location")
+
+
+class ResponseModel(BaseModel):
+    message: str = Field(...)

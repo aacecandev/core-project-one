@@ -1,3 +1,5 @@
+import asyncio
+
 from bson import ObjectId, errors
 from fastapi import HTTPException, status
 from motor.motor_asyncio import AsyncIOMotorClient, AsyncIOMotorDatabase
@@ -10,6 +12,8 @@ motor_client = AsyncIOMotorClient(
     maxPoolSize=settings.MAX_CONNECTIONS_COUNT,
     minPoolSize=settings.MIN_CONNECTIONS_COUNT,
 )
+
+motor_client.get_io_loop = asyncio.get_running_loop
 
 database = motor_client[settings.DATABASE_NAME]
 

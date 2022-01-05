@@ -25,6 +25,9 @@ Pandas SettingWithcopyWarning
     - https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-view-versus-copy
     - https://www.dataquest.io/blog/settingwithcopywarning/
 
+https://jira.mongodb.org/browse/MOTOR-822
+https://testdriven.io/blog/fastapi-mongo/
+
 https://docs.gunicorn.org/en/stable/configure.html#configuration-file
 https://fastapi.tiangolo.com/deployment/docker/#replication-number-of-processes
 https://github.com/tiangolo/uvicorn-gunicorn-docker

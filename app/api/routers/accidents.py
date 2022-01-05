@@ -8,6 +8,7 @@ from models.accidents import (
     AccidentPostRequest,
     AccidentRequest,
     AccidentResponse,
+    ResponseModel,
 )
 from motor.motor_asyncio import AsyncIOMotorDatabase
 from routers.api_router import APIRouter, TimedRoute
@@ -124,23 +125,17 @@ async def get_accident(
 @router.put(
     "/create",
     summary="Create a single accident",
-    response_model=AccidentResponse,
+    response_model=ResponseModel,
     response_description="Create a single accident",
     responses={
-        200: {
-            "description": "The request was successful.",
-            "content": {"application/json": {"model": AccidentResponse}},
-        },
-        422: {
-            "description": "The request doesn't return any data.",
-            "content": {"application/json": {"model": AccidentResponse}},
-        },
+        200: {"description": "The request was successful."},
+        422: {"description": "The request doesn't return any data."},
     },
 )
 async def create_post(
     payload: AccidentPostRequest,
     database: AsyncIOMotorDatabase = Depends(get_database),
-) -> AccidentResponse:
+) -> ResponseModel:
     """
     Create a single accident document
 
@@ -158,24 +153,16 @@ async def create_post(
     try:
         accident = payload.dict()
         inserted = await database["accidents"].insert_one(accident)
-        print("DEBUG")
-        print(dir(inserted))
-        print(inserted.inserted_id)
         if inserted.inserted_id is None:
-            JSONResponse(
+            return JSONResponse(
                 status_code=status.HTTP_404_NOT_FOUND,
                 content={"message": "No accident found"},
             )
-            return None
         else:
-            result = await database["accidents"].find_one({"_id": inserted.inserted_id})
-            print(dir(result))
-            print(result.items())
-            JSONResponse(
+            return JSONResponse(
                 status_code=status.HTTP_201_CREATED,
                 content={"message": "Successfully created accident"},
             )
-            return result.items()
     except HTTPException as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -186,7 +173,7 @@ async def create_post(
 @router.patch(
     "/update",
     summary="Update a single accident",
-    response_model=AccidentResponse,
+    response_model=ResponseModel,
     response_description="Update a single accident",
     responses={
         200: {"description": "The document was successfully updated"},
@@ -196,7 +183,27 @@ async def create_post(
 async def update_post(
     payload: AccidentPartialUpdateRequest,
     database: AsyncIOMotorDatabase = Depends(get_database),
-) -> AccidentResponse:
+) -> ResponseModel:
+    """
+    This endpoint updates a single document when being provided with a valid ObjectId string
+    and the values to be updated within the payload.
+
+    - victims: Optional[0 >= integer <= 100]
+    - vehicles_involved: Optional[0 >= integer <= 100]
+    - date: Optional[datetime]
+    - location: [Optional]
+        - coordinates: [float, float]
+        - type: string containing either "Point" or "LineString"
+
+    It returns a model that is a dictionary with the following `key:value` structure:
+
+    - victims: 0 >= integer <= 100
+    - vehicles_involved: 0 >= integer <= 100
+    - date: datetime
+    - location:
+        - coordinates: [float, float]
+        - type: string containing either "Point" or "LineString"
+    """
     id = await get_object_id(payload.id)
     data = {
         "victims": payload.victims,
@@ -205,17 +212,15 @@ async def update_post(
     try:
         result = await database["accidents"].update_one({"_id": id}, {"$set": data})
         if result.modified_count != 0:
-            JSONResponse(
+            return JSONResponse(
                 status_code=status.HTTP_200_OK,
                 content={"message": "Successfully updated accident"},
             )
-            return result.modified_count
         else:
-            JSONResponse(
+            return JSONResponse(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 content={"message": "No accident found"},
             )
-            return None
     except HTTPException as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
@@ -226,7 +231,7 @@ async def update_post(
 @router.delete(
     "/delete/{id}",
     summary="Delete a single accident",
-    response_model=AccidentResponse,
+    response_model=ResponseModel,
     response_description="Delete a single accident",
     responses={
         200: {"description": "The request was successful."},
@@ -236,7 +241,7 @@ async def update_post(
 async def delete_post(
     database: AsyncIOMotorDatabase = Depends(get_database),
     id: ObjectId = Depends(get_object_id),
-):
+) -> ResponseModel:
     """
     This endpoint deletes a single document when being provided with a valid ObjectId string.
     within the payload.
@@ -252,23 +257,17 @@ async def delete_post(
         - type: string containing either "Point" or "LineString"
     """
     try:
-        found = await database["accidents"].find_one({"_id": id})
-        # print(dir(found))
-        # print(found.items())
         result = await database["accidents"].delete_one({"_id": id})
-        print(dir(result))
         if result.deleted_count != 0:
-            JSONResponse(
+            return JSONResponse(
                 status_code=status.HTTP_200_OK,
                 content={"message": "Successfully deleted accident"},
             )
-            return found.items()
         else:
-            JSONResponse(
+            return JSONResponse(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 content={"message": "No accident found"},
             )
-            return None
     except HTTPException as e:
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
