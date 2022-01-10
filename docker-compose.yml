@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+
+  app:
+    image: ${DOCKER_API_IMAGE}:${DOCKER_API_TAG}
+    build:
+      context: ./app/api
+    container_name: ${DOCKER_API_IMAGE}
+    ports:
+      - 8000:8000
+    env_file:
+      - app/api/.env
+
+  db:
+    image: ${DOCKER_DB_IMAGE}:${DOCKER_DB_TAG}
+    build:
+      context: ./database
+    container_name: ${DOCKER_DB_IMAGE}
+    ports:
+      - 27017:27017
+    env_file:
+      - database/.env
+
+  streamlit:
+    image: ${DOCKER_STREAMLIT_IMAGE}:${DOCKER_STREAMLIT_TAG}
+    build:
+      context: ./app/dashboard
+    container_name: ${DOCKER_STREAMLIT_IMAGE}
+    ports:
+      - 8501:8501
+    depends_on:
+      - api

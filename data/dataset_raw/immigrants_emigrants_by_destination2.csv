@@ -1,0 +1,401 @@
+"from","to","weight"
+"Ciutat Vella","Andalusia",188
+"Ciutat Vella","Aragon",64
+"Ciutat Vella","Canary Islands",95
+"Ciutat Vella","Cantabria",17
+"Ciutat Vella","Castilla-La Mancha",23
+"Ciutat Vella","Castile and León",39
+"Ciutat Vella","Catalonia",2906
+"Ciutat Vella","Ceuta",0
+"Ciutat Vella","Community of Madrid",259
+"Ciutat Vella","Navarre",11
+"Ciutat Vella","Valencian Community",167
+"Ciutat Vella","Abroad",486
+"Ciutat Vella","Extremadura",19
+"Ciutat Vella","Galicia",55
+"Ciutat Vella","Balearic Islands",187
+"Ciutat Vella","Melilla",4
+"Ciutat Vella","Basque Country",62
+"Ciutat Vella","Asturias",14
+"Ciutat Vella","Region of Murcia",24
+"Ciutat Vella","La Rioja",9
+"Eixample","Andalusia",256
+"Eixample","Aragon",127
+"Eixample","Canary Islands",172
+"Eixample","Cantabria",19
+"Eixample","Castilla-La Mancha",28
+"Eixample","Castile and León",93
+"Eixample","Catalonia",5409
+"Eixample","Ceuta",2
+"Eixample","Community of Madrid",580
+"Eixample","Navarre",37
+"Eixample","Valencian Community",313
+"Eixample","Abroad",1158
+"Eixample","Extremadura",23
+"Eixample","Galicia",139
+"Eixample","Balearic Islands",321
+"Eixample","Melilla",2
+"Eixample","Basque Country",96
+"Eixample","Asturias",38
+"Eixample","Region of Murcia",54
+"Eixample","La Rioja",16
+"Gràcia","Andalusia",109
+"Gràcia","Aragon",44
+"Gràcia","Canary Islands",54
+"Gràcia","Cantabria",9
+"Gràcia","Castilla-La Mancha",14
+"Gràcia","Castile and León",31
+"Gràcia","Catalonia",2440
+"Gràcia","Ceuta",0
+"Gràcia","Community of Madrid",212
+"Gràcia","Navarre",23
+"Gràcia","Valencian Community",150
+"Gràcia","Abroad",436
+"Gràcia","Extremadura",11
+"Gràcia","Galicia",77
+"Gràcia","Balearic Islands",113
+"Gràcia","Melilla",1
+"Gràcia","Basque Country",38
+"Gràcia","Asturias",15
+"Gràcia","Region of Murcia",28
+"Gràcia","La Rioja",2
+"Horta-Guinardó","Andalusia",148
+"Horta-Guinardó","Aragon",82
+"Horta-Guinardó","Canary Islands",69
+"Horta-Guinardó","Cantabria",18
+"Horta-Guinardó","Castilla-La Mancha",52
+"Horta-Guinardó","Castile and León",41
+"Horta-Guinardó","Catalonia",3354
+"Horta-Guinardó","Ceuta",0
+"Horta-Guinardó","Community of Madrid",193
+"Horta-Guinardó","Navarre",15
+"Horta-Guinardó","Valencian Community",180
+"Horta-Guinardó","Abroad",398
+"Horta-Guinardó","Extremadura",33
+"Horta-Guinardó","Galicia",74
+"Horta-Guinardó","Balearic Islands",117
+"Horta-Guinardó","Melilla",2
+"Horta-Guinardó","Basque Country",45
+"Horta-Guinardó","Asturias",17
+"Horta-Guinardó","Region of Murcia",11
+"Horta-Guinardó","La Rioja",11
+"Les Corts","Andalusia",72
+"Les Corts","Aragon",31
+"Les Corts","Canary Islands",46
+"Les Corts","Cantabria",4
+"Les Corts","Castilla-La Mancha",30
+"Les Corts","Castile and León",35
+"Les Corts","Catalonia",1668
+"Les Corts","Ceuta",2
+"Les Corts","Community of Madrid",168
+"Les Corts","Navarre",7
+"Les Corts","Valencian Community",75
+"Les Corts","Abroad",380
+"Les Corts","Extremadura",9
+"Les Corts","Galicia",34
+"Les Corts","Balearic Islands",61
+"Les Corts","Melilla",2
+"Les Corts","Basque Country",15
+"Les Corts","Asturias",12
+"Les Corts","Region of Murcia",3
+"Les Corts","La Rioja",5
+"Nou Barris","Andalusia",195
+"Nou Barris","Aragon",74
+"Nou Barris","Canary Islands",47
+"Nou Barris","Cantabria",6
+"Nou Barris","Castilla-La Mancha",50
+"Nou Barris","Castile and León",57
+"Nou Barris","Catalonia",3667
+"Nou Barris","Ceuta",0
+"Nou Barris","Community of Madrid",158
+"Nou Barris","Navarre",18
+"Nou Barris","Valencian Community",132
+"Nou Barris","Abroad",386
+"Nou Barris","Extremadura",29
+"Nou Barris","Galicia",84
+"Nou Barris","Balearic Islands",70
+"Nou Barris","Melilla",2
+"Nou Barris","Basque Country",37
+"Nou Barris","Asturias",20
+"Nou Barris","Region of Murcia",26
+"Nou Barris","La Rioja",3
+"Sant Andreu","Andalusia",119
+"Sant Andreu","Aragon",67
+"Sant Andreu","Canary Islands",58
+"Sant Andreu","Cantabria",7
+"Sant Andreu","Castilla-La Mancha",42
+"Sant Andreu","Castile and León",49
+"Sant Andreu","Catalonia",3102
+"Sant Andreu","Ceuta",2
+"Sant Andreu","Community of Madrid",168
+"Sant Andreu","Navarre",16
+"Sant Andreu","Valencian Community",119
+"Sant Andreu","Abroad",265
+"Sant Andreu","Extremadura",20
+"Sant Andreu","Galicia",58
+"Sant Andreu","Balearic Islands",65
+"Sant Andreu","Melilla",1
+"Sant Andreu","Basque Country",27
+"Sant Andreu","Asturias",15
+"Sant Andreu","Region of Murcia",11
+"Sant Andreu","La Rioja",3
+"Sant Martí","Andalusia",232
+"Sant Martí","Aragon",124
+"Sant Martí","Canary Islands",104
+"Sant Martí","Cantabria",24
+"Sant Martí","Castilla-La Mancha",46
+"Sant Martí","Castile and León",72
+"Sant Martí","Catalonia",5025
+"Sant Martí","Ceuta",1
+"Sant Martí","Community of Madrid",281
+"Sant Martí","Navarre",28
+"Sant Martí","Valencian Community",235
+"Sant Martí","Abroad",750
+"Sant Martí","Extremadura",25
+"Sant Martí","Galicia",111
+"Sant Martí","Balearic Islands",175
+"Sant Martí","Melilla",1
+"Sant Martí","Basque Country",57
+"Sant Martí","Asturias",28
+"Sant Martí","Region of Murcia",36
+"Sant Martí","La Rioja",7
+"Sants-Montjuïc","Andalusia",196
+"Sants-Montjuïc","Aragon",90
+"Sants-Montjuïc","Canary Islands",78
+"Sants-Montjuïc","Cantabria",23
+"Sants-Montjuïc","Castilla-La Mancha",44
+"Sants-Montjuïc","Castile and León",75
+"Sants-Montjuïc","Catalonia",5143
+"Sants-Montjuïc","Ceuta",3
+"Sants-Montjuïc","Community of Madrid",291
+"Sants-Montjuïc","Navarre",21
+"Sants-Montjuïc","Valencian Community",212
+"Sants-Montjuïc","Abroad",543
+"Sants-Montjuïc","Extremadura",23
+"Sants-Montjuïc","Galicia",112
+"Sants-Montjuïc","Balearic Islands",145
+"Sants-Montjuïc","Melilla",11
+"Sants-Montjuïc","Basque Country",56
+"Sants-Montjuïc","Asturias",31
+"Sants-Montjuïc","Region of Murcia",28
+"Sants-Montjuïc","La Rioja",11
+"Sarrià-Sant Gervasi","Andalusia",81
+"Sarrià-Sant Gervasi","Aragon",42
+"Sarrià-Sant Gervasi","Canary Islands",66
+"Sarrià-Sant Gervasi","Cantabria",5
+"Sarrià-Sant Gervasi","Castilla-La Mancha",18
+"Sarrià-Sant Gervasi","Castile and León",25
+"Sarrià-Sant Gervasi","Catalonia",2322
+"Sarrià-Sant Gervasi","Ceuta",2
+"Sarrià-Sant Gervasi","Community of Madrid",337
+"Sarrià-Sant Gervasi","Navarre",10
+"Sarrià-Sant Gervasi","Valencian Community",128
+"Sarrià-Sant Gervasi","Abroad",683
+"Sarrià-Sant Gervasi","Extremadura",9
+"Sarrià-Sant Gervasi","Galicia",51
+"Sarrià-Sant Gervasi","Balearic Islands",174
+"Sarrià-Sant Gervasi","Melilla",1
+"Sarrià-Sant Gervasi","Basque Country",42
+"Sarrià-Sant Gervasi","Asturias",14
+"Sarrià-Sant Gervasi","Region of Murcia",22
+"Sarrià-Sant Gervasi","La Rioja",5
+"Andalusia","Ciutat Vella",285
+"Andalusia","Eixample",446
+"Andalusia","Gràcia",196
+"Andalusia","Horta-Guinardó",233
+"Andalusia","Les Corts",94
+"Andalusia","Nou Barris",212
+"Andalusia","Sant Andreu",184
+"Andalusia","Sant Martí",300
+"Andalusia","Sants-Montjuïc",323
+"Andalusia","Sarrià-Sant Gervasi",143
+"Aragon","Ciutat Vella",62
+"Aragon","Eixample",149
+"Aragon","Gràcia",55
+"Aragon","Horta-Guinardó",71
+"Aragon","Les Corts",55
+"Aragon","Nou Barris",65
+"Aragon","Sant Andreu",66
+"Aragon","Sant Martí",139
+"Aragon","Sants-Montjuïc",98
+"Aragon","Sarrià-Sant Gervasi",51
+"Canary Islands","Ciutat Vella",107
+"Canary Islands","Eixample",168
+"Canary Islands","Gràcia",61
+"Canary Islands","Horta-Guinardó",64
+"Canary Islands","Les Corts",48
+"Canary Islands","Nou Barris",60
+"Canary Islands","Sant Andreu",62
+"Canary Islands","Sant Martí",136
+"Canary Islands","Sants-Montjuïc",90
+"Canary Islands","Sarrià-Sant Gervasi",67
+"Cantabria","Ciutat Vella",17
+"Cantabria","Eixample",36
+"Cantabria","Gràcia",19
+"Cantabria","Horta-Guinardó",18
+"Cantabria","Les Corts",7
+"Cantabria","Nou Barris",8
+"Cantabria","Sant Andreu",11
+"Cantabria","Sant Martí",16
+"Cantabria","Sants-Montjuïc",23
+"Cantabria","Sarrià-Sant Gervasi",7
+"Castilla-La Mancha","Ciutat Vella",55
+"Castilla-La Mancha","Eixample",73
+"Castilla-La Mancha","Gràcia",43
+"Castilla-La Mancha","Horta-Guinardó",37
+"Castilla-La Mancha","Les Corts",17
+"Castilla-La Mancha","Nou Barris",49
+"Castilla-La Mancha","Sant Andreu",46
+"Castilla-La Mancha","Sant Martí",56
+"Castilla-La Mancha","Sants-Montjuïc",47
+"Castilla-La Mancha","Sarrià-Sant Gervasi",22
+"Castile and León","Ciutat Vella",61
+"Castile and León","Eixample",188
+"Castile and León","Gràcia",66
+"Castile and León","Horta-Guinardó",67
+"Castile and León","Les Corts",40
+"Castile and León","Nou Barris",61
+"Castile and León","Sant Andreu",53
+"Castile and León","Sant Martí",108
+"Castile and León","Sants-Montjuïc",119
+"Castile and León","Sarrià-Sant Gervasi",51
+"Catalonia","Ciutat Vella",2389
+"Catalonia","Eixample",4398
+"Catalonia","Gràcia",1958
+"Catalonia","Horta-Guinardó",2819
+"Catalonia","Les Corts",1453
+"Catalonia","Nou Barris",3130
+"Catalonia","Sant Andreu",2464
+"Catalonia","Sant Martí",4111
+"Catalonia","Sants-Montjuïc",3816
+"Catalonia","Sarrià-Sant Gervasi",2241
+"Ceuta","Ciutat Vella",5
+"Ceuta","Eixample",2
+"Ceuta","Gràcia",4
+"Ceuta","Horta-Guinardó",0
+"Ceuta","Les Corts",0
+"Ceuta","Nou Barris",1
+"Ceuta","Sant Andreu",5
+"Ceuta","Sant Martí",1
+"Ceuta","Sants-Montjuïc",5
+"Ceuta","Sarrià-Sant Gervasi",1
+"Community of Madrid","Ciutat Vella",333
+"Community of Madrid","Eixample",629
+"Community of Madrid","Gràcia",260
+"Community of Madrid","Horta-Guinardó",211
+"Community of Madrid","Les Corts",164
+"Community of Madrid","Nou Barris",171
+"Community of Madrid","Sant Andreu",197
+"Community of Madrid","Sant Martí",350
+"Community of Madrid","Sants-Montjuïc",340
+"Community of Madrid","Sarrià-Sant Gervasi",287
+"Navarre","Ciutat Vella",18
+"Navarre","Eixample",66
+"Navarre","Gràcia",16
+"Navarre","Horta-Guinardó",21
+"Navarre","Les Corts",9
+"Navarre","Nou Barris",13
+"Navarre","Sant Andreu",17
+"Navarre","Sant Martí",29
+"Navarre","Sants-Montjuïc",31
+"Navarre","Sarrià-Sant Gervasi",26
+"Valencian Community","Ciutat Vella",246
+"Valencian Community","Eixample",457
+"Valencian Community","Gràcia",206
+"Valencian Community","Horta-Guinardó",198
+"Valencian Community","Les Corts",116
+"Valencian Community","Nou Barris",134
+"Valencian Community","Sant Andreu",149
+"Valencian Community","Sant Martí",301
+"Valencian Community","Sants-Montjuïc",357
+"Valencian Community","Sarrià-Sant Gervasi",141
+"Abroad","Ciutat Vella",8586
+"Abroad","Eixample",11473
+"Abroad","Gràcia",3964
+"Abroad","Horta-Guinardó",3716
+"Abroad","Les Corts",2164
+"Abroad","Nou Barris",4031
+"Abroad","Sant Andreu",2844
+"Abroad","Sant Martí",6601
+"Abroad","Sants-Montjuïc",5903
+"Abroad","Sarrià-Sant Gervasi",3803
+"Extremadura","Ciutat Vella",21
+"Extremadura","Eixample",50
+"Extremadura","Gràcia",24
+"Extremadura","Horta-Guinardó",34
+"Extremadura","Les Corts",8
+"Extremadura","Nou Barris",25
+"Extremadura","Sant Andreu",13
+"Extremadura","Sant Martí",32
+"Extremadura","Sants-Montjuïc",24
+"Extremadura","Sarrià-Sant Gervasi",9
+"Galicia","Ciutat Vella",98
+"Galicia","Eixample",205
+"Galicia","Gràcia",77
+"Galicia","Horta-Guinardó",77
+"Galicia","Les Corts",49
+"Galicia","Nou Barris",99
+"Galicia","Sant Andreu",46
+"Galicia","Sant Martí",153
+"Galicia","Sants-Montjuïc",130
+"Galicia","Sarrià-Sant Gervasi",49
+"Balearic Islands","Ciutat Vella",155
+"Balearic Islands","Eixample",347
+"Balearic Islands","Gràcia",162
+"Balearic Islands","Horta-Guinardó",132
+"Balearic Islands","Les Corts",68
+"Balearic Islands","Nou Barris",102
+"Balearic Islands","Sant Andreu",81
+"Balearic Islands","Sant Martí",172
+"Balearic Islands","Sants-Montjuïc",176
+"Balearic Islands","Sarrià-Sant Gervasi",239
+"Melilla","Ciutat Vella",16
+"Melilla","Eixample",5
+"Melilla","Gràcia",4
+"Melilla","Horta-Guinardó",2
+"Melilla","Les Corts",1
+"Melilla","Nou Barris",9
+"Melilla","Sant Andreu",7
+"Melilla","Sant Martí",2
+"Melilla","Sants-Montjuïc",11
+"Melilla","Sarrià-Sant Gervasi",3
+"Basque Country","Ciutat Vella",78
+"Basque Country","Eixample",159
+"Basque Country","Gràcia",74
+"Basque Country","Horta-Guinardó",46
+"Basque Country","Les Corts",39
+"Basque Country","Nou Barris",47
+"Basque Country","Sant Andreu",40
+"Basque Country","Sant Martí",93
+"Basque Country","Sants-Montjuïc",86
+"Basque Country","Sarrià-Sant Gervasi",48
+"Asturias","Ciutat Vella",24
+"Asturias","Eixample",98
+"Asturias","Gràcia",25
+"Asturias","Horta-Guinardó",26
+"Asturias","Les Corts",22
+"Asturias","Nou Barris",9
+"Asturias","Sant Andreu",15
+"Asturias","Sant Martí",38
+"Asturias","Sants-Montjuïc",46
+"Asturias","Sarrià-Sant Gervasi",20
+"Region of Murcia","Ciutat Vella",43
+"Region of Murcia","Eixample",70
+"Region of Murcia","Gràcia",29
+"Region of Murcia","Horta-Guinardó",20
+"Region of Murcia","Les Corts",13
+"Region of Murcia","Nou Barris",30
+"Region of Murcia","Sant Andreu",28
+"Region of Murcia","Sant Martí",66
+"Region of Murcia","Sants-Montjuïc",42
+"Region of Murcia","Sarrià-Sant Gervasi",13
+"La Rioja","Ciutat Vella",12
+"La Rioja","Eixample",28
+"La Rioja","Gràcia",11
+"La Rioja","Horta-Guinardó",7
+"La Rioja","Les Corts",8
+"La Rioja","Nou Barris",18
+"La Rioja","Sant Andreu",7
+"La Rioja","Sant Martí",16
+"La Rioja","Sants-Montjuïc",16
+"La Rioja","Sarrià-Sant Gervasi",6
