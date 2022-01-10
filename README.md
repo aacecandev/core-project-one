@@ -65,6 +65,8 @@ Another interesting aspect is that requiring location information with the `geop
 
 You can run a notebook in the `data` folder and repeat my steps, and when you're done, export the DataFrame to a JSON file that will feed the local MongoDB database, or just upload it with your own URL in an `.env` file.
 
+To be get the basic environment ready, install the packages contained in the `requirements.txt` file.
+
 ## Fast API
 
 This projects uses `Fast API` as its backend to create the API.
@@ -104,26 +106,54 @@ A user can also upload a new dataset to the database, and the dashboard will be 
 
 Another cool feature is that you can download a report of the data, which I've achieved using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
 
+This project uses Streamlit's native secrets management, so you must provide an `app/dashboard/.streamlit/secrets.toml` file with the following variables:
+
+```toml
+url
+api_key
+api_secret
+sender_email
+sender_name
+
+[mongo]
+host
+port
+username
+password
+```
+
 ## MongoDB
 
 When you export the DataFrame with Jupyter, the data is stored in a folder that contains a MongoDB Dockerfile which will be used to create a MongoDB container automatically.
+
+Authentication will be enabled using the `entrypoint.sh` script, which will be executed when the container is started. It also creates a non root user giving him `readWrite` role on a non-admin database.
+
+In order to deploy the MongoDB Docker container, a `database/.env` file must be created with the following variables:
+
+- MONGO_INITDB_ROOT_USERNAME
+- MONGO_INITDB_ROOT_PASSWORD
+- MONGO_NON_ROOT_USERNAME
+- MONGO_NON_ROOT_PASSWORD
+- MONGO_NON_ROOT_ROLE
+- MONGO_INITDB_DATABASE
+- MONGO_NON_ROOT_DB
 
 ## Running this project
 
 This projects uses `Makefile`. The following options are available:
 
-- help: Show the help
-- build-docker-api: Build the Docker image for the API
-- lint-docker-api: Lint the Docker image for the API
-- run-docker-api: Run the Docker image for the API
-- build-docker-db: Build the Docker image for the MongoDB
-- lint-docker-db: Lint the Docker image for the MongoDB
-- run-docker-db: Run the Docker image for the MongoDB
-- build-docker-streamlit: Build the Docker image for the Streamlit
-- lint-docker-streamlit: Lint the Docker image for the Streamlit
-- run-docker-streamlit: Run the Docker image for the Streamlit
-- run-app: Run the application using docker compose
-- rm-app: Remove the docker-compose stack
+- `help`: Show the help
+- `build-docker-api`: Build the Docker image for the API
+- `lint-docker-api`: Lint the Docker image for the API
+- `run-docker-api`: Run the Docker image for the API
+- `build-docker-db`: Build the Docker image for the MongoDB
+- `lint-docker-db`: Lint the Docker image for the MongoDB
+- `run-docker-db`: Run the Docker image for the MongoDB
+- `build-docker-streamlit`: Build the Docker image for the Streamlit
+- `lint-docker-streamlit`: Lint the Docker image for the Streamlit
+- `run-docker-streamlit`: Run the Docker image for the Streamlit
+- `run-app`: Run the application using docker compose
+- `rm-app`: Remove the docker-compose stack
 
 ## Pre-commit
 
@@ -144,87 +174,61 @@ Pull Requests are welcome! Feel free to contribute to the project.
 This project uses [Semantic Release](https://github.com/semantic-release/semantic-release) and every push to the `main` branch will trigger a workflow that generates a `CHANGELOG.md` file.
 ## Resources
 
-- pre-commit
-    - https://pre-commit.com/index.html
-    - https://towardsdatascience.com/pre-commit-hooks-you-must-know-ff247f5feb7e
-    - https://github.com/zricethezav/gitleaks
-- codecov
-    -
-
-- Pandas memory usage
-    - https://pythonspeed.com/articles/pandas-load-less-data/
-
-Pandas SettingWithcopyWarning
-    - https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-view-versus-copy
-    - https://www.dataquest.io/blog/settingwithcopywarning/
-
-https://jira.mongodb.org/browse/MOTOR-822
-https://testdriven.io/blog/fastapi-mongo/
-
-https://docs.gunicorn.org/en/stable/configure.html#configuration-file
-https://fastapi.tiangolo.com/deployment/docker/#replication-number-of-processes
-https://github.com/tiangolo/uvicorn-gunicorn-docker
-https://fastapi.tiangolo.com/advanced/async-tests/
-https://www.python-httpx.org/advanced/
-https://pypi.org/project/asgi-lifespan/
-
-https://medium.com/codex/automated-github-actions-deployment-with-semantic-release-d8f8ae9c6252
-https://semantic-release.gitbook.io/semantic-release/extending/plugins-list#community-plugins
-https://semantic-release.gitbook.io/semantic-release/extending/plugins-list#official-plugins
-https://github.com/juliuscc/semantic-release-slack-bot
-https://github.com/pmowrer/semantic-release-monorepo/blob/master/package.json
-https://motor.readthedocs.io/en/stable/differences.html
-https://testdriven.io/blog/fastapi-mongo/
-https://github.com/encode/starlette/blob/master/starlette/status.py
-https://docs.python.org/3/library/functools.html#functools.lru_cache
-https://betterprogramming.pub/metadata-and-additional-responses-in-fastapi-ea90a321d477
-https://stackoverflow.com/questions/41584243/runtimeerror-task-attached-to-a-different-loop
-https://deckgl.readthedocs.io/en/latest/gallery/hexagon_layer.html
-https://docs.streamlit.io/library/api-reference/charts/st.pydeck_chart
-https://discuss.streamlit.io/t/creating-a-pdf-file-generator/7613
-https://github.com/tiangolo/fastapi/issues/1515
-https://www.geeksforgeeks.org/python-functools-lru_cache/
-https://www.modelingonlineauctions.com/datasets
-https://jeande.medium.com/how-to-do-exploratory-data-analysis-effectively-b530d0e4de
-https://medium.com/analytics-vidhya/data-visualization-and-exploratory-data-analysis-eda-in-data-science-984e84942fda
-https://towardsdatascience.com/an-extensive-guide-to-exploratory-data-analysis-ddd99a03199e
-https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf
-https://github.com/abjmorrison/MediumTutorials/blob/main/GeoPyExamples/GeoPy_NominatimExample.py
-https://wiki.openstreetmap.org/wiki/Nominatim
-https://mappinggis.com/2018/11/geocodificacion-con-geopy/
-https://curc.readthedocs.io/en/latest/gateways/parallel-programming-jupyter.html
-https://pypi.org/project/multiprocess/
-https://stackoverflow.com/questions/16982569/making-multiple-api-calls-in-parallel-using-python-ipython
-https://nbviewer.org/gist/minrk/5732094
-https://pretagteam.com/question/multiprocessing-vs-threading-in-jupyter-notebook
-
-Streamlit pdf
-https://discuss.streamlit.io/t/creating-a-pdf-file-generator/7613/2
-https://discuss.streamlit.io/t/deploying-an-app-using-using-wkhtmltopdf-on-herokou/12029/8
-
-Deploy heroku
-https://devcenter.heroku.com/articles/container-registry-and-runtime
-https://devcenter.heroku.com/articles/build-docker-images-heroku-yml
-https://github.com/marketplace/actions/deploy-to-heroku#environment-variables
-https://github.com/SFDO-Tooling/Metecho/blob/main/heroku.yml
-
-Dcoument fastapi
-https://www.linode.com/docs/guides/documenting-a-fastapi-app-with-openapi/
-
-Streamlit maps
-https://discuss.streamlit.io/t/ann-streamlit-folium-a-component-for-rendering-folium-maps/4367
-
-Mypy
-https://mypy.readthedocs.io/en/stable/
-
-Uvicorn
-https://www.uvicorn.org/settings/
-
-Pydantic
-https://pydantic-docs.helpmanual.io/
-
-Codecov
-https://github.com/codecov/codecov-action
-https://app.codecov.io/gh/aacecandev/core-project-one
-https://github.com/codecov/example-python
-https://github.com/nedbat/coveragepy
+- https://pre-commit.com/index.html
+- https://towardsdatascience.com/pre-commit-hooks-you-must-know-ff247f5feb7e
+- https://github.com/zricethezav/gitleaks
+- https://pythonspeed.com/articles/pandas-load-less-data/
+- https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-view-versus-copy
+- https://www.dataquest.io/blog/settingwithcopywarning/
+- https://jira.mongodb.org/browse/MOTOR-822
+- https://testdriven.io/blog/fastapi-mongo/
+- https://docs.gunicorn.org/en/stable/configure.html#configuration-file
+- https://fastapi.tiangolo.com/deployment/docker/#replication-number-of-processes
+- https://github.com/tiangolo/uvicorn-gunicorn-docker
+- https://fastapi.tiangolo.com/advanced/async-tests/
+- https://www.python-httpx.org/advanced/
+- https://pypi.org/project/asgi-lifespan/
+- https://medium.com/codex/automated-github-actions-deployment-with-semantic-release-d8f8ae9c6252
+- https://semantic-release.gitbook.io/semantic-release/extending/plugins-list#community-plugins
+- https://semantic-release.gitbook.io/semantic-release/extending/plugins-list#official-plugins
+- https://github.com/juliuscc/semantic-release-slack-bot
+- https://github.com/pmowrer/semantic-release-monorepo/blob/master/package.json
+- https://motor.readthedocs.io/en/stable/differences.html
+- https://testdriven.io/blog/fastapi-mongo/
+- https://github.com/encode/starlette/blob/master/starlette/status.py
+- https://docs.python.org/3/library/functools.html#functools.lru_cache
+- https://betterprogramming.pub/metadata-and-additional-responses-in-fastapi-ea90a321d477
+- https://stackoverflow.com/questions/41584243/runtimeerror-task-attached-to-a-different-loop
+- https://deckgl.readthedocs.io/en/latest/gallery/hexagon_layer.html
+- https://docs.streamlit.io/library/api-reference/charts/st.pydeck_chart
+- https://discuss.streamlit.io/t/creating-a-pdf-file-generator/7613
+- https://github.com/tiangolo/fastapi/issues/1515
+- https://www.geeksforgeeks.org/python-functools-lru_cache/
+- https://www.modelingonlineauctions.com/datasets
+- https://jeande.medium.com/how-to-do-exploratory-data-analysis-effectively-b530d0e4de
+- https://medium.com/analytics-vidhya/data-visualization-and-exploratory-data-analysis-eda-in-data-science-984e84942fda
+- https://towardsdatascience.com/an-extensive-guide-to-exploratory-data-analysis-ddd99a03199e
+- https://github.com/JazzCore/python-pdfkit/wiki/Installing-wkhtmltopdf
+- https://github.com/abjmorrison/MediumTutorials/blob/main/GeoPyExamples/GeoPy_NominatimExample.py
+- https://wiki.openstreetmap.org/wiki/Nominatim
+- https://mappinggis.com/2018/11/geocodificacion-con-geopy/
+- https://curc.readthedocs.io/en/latest/gateways/parallel-programming-jupyter.html
+- https://pypi.org/project/multiprocess/
+- https://stackoverflow.com/questions/16982569/making-multiple-api-calls-in-parallel-using-python-ipython
+- https://nbviewer.org/gist/minrk/5732094
+- https://pretagteam.com/question/multiprocessing-vs-threading-in-jupyter-notebook
+- https://discuss.streamlit.io/t/creating-a-pdf-file-generator/7613/2
+- https://discuss.streamlit.io/t/deploying-an-app-using-using-wkhtmltopdf-on-herokou/12029/8
+- https://devcenter.heroku.com/articles/container-registry-and-runtime
+- https://devcenter.heroku.com/articles/build-docker-images-heroku-yml
+- https://github.com/marketplace/actions/deploy-to-heroku#environment-variables
+- https://github.com/SFDO-Tooling/Metecho/blob/main/heroku.yml
+- https://www.linode.com/docs/guides/documenting-a-fastapi-app-with-openapi/
+- https://discuss.streamlit.io/t/ann-streamlit-folium-a-component-for-rendering-folium-maps/4367¡
+- https://mypy.readthedocs.io/en/stable/
+- https://www.uvicorn.org/settings/
+- https://pydantic-docs.helpmanual.io/
+- https://github.com/codecov/codecov-action
+- https://app.codecov.io/gh/aacecandev/core-project-one
+- https://github.com/codecov/example-python
+- https://github.com/nedbat/coveragepy
