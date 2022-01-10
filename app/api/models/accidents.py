@@ -26,7 +26,7 @@ class AccidentRequest(AccidentResponse, MongoBaseModel):
 class AccidentPostRequest(BaseModel):
     victims: int = Field(..., ge=0, lt=100, alias="victims")
     vehicles_involved: int = Field(..., ge=0, lt=100, alias="vehicles_involved")
-    date: datetime = Field(default_factory=datetime.now, alias="date")
+    date: datetime
     location: Location = Field(..., alias="location")
 
 
