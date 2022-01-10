@@ -16,7 +16,7 @@ from routers.api_router import APIRouter, TimedRoute
 from database.mongo import get_database, get_object_id
 
 router = APIRouter(
-    tags=["accidents"],
+    tags=["accidents_crud"],
     route_class=TimedRoute,
 )
 
@@ -155,7 +155,7 @@ async def create_post(
         inserted = await database["accidents"].insert_one(accident)
         if inserted.inserted_id is None:
             return JSONResponse(
-                status_code=status.HTTP_404_NOT_FOUND,
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 content={"message": "No accident found"},
             )
         else:
@@ -180,7 +180,7 @@ async def create_post(
         422: {"description": "The document was not updated"},
     },
 )
-async def update_post(
+async def update(
     payload: AccidentPartialUpdateRequest,
     database: AsyncIOMotorDatabase = Depends(get_database),
 ) -> ResponseModel:
@@ -238,7 +238,7 @@ async def update_post(
         422: {"description": "The request is malformed."},
     },
 )
-async def delete_post(
+async def delete(
     database: AsyncIOMotorDatabase = Depends(get_database),
     id: ObjectId = Depends(get_object_id),
 ) -> ResponseModel:
@@ -258,6 +258,7 @@ async def delete_post(
     """
     try:
         result = await database["accidents"].delete_one({"_id": id})
+        print(dir(result))
         if result.deleted_count != 0:
             return JSONResponse(
                 status_code=status.HTTP_200_OK,
@@ -266,7 +267,7 @@ async def delete_post(
         else:
             return JSONResponse(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                content={"message": "No accident found"},
+                content={"message": "The accident has not been updated"},
             )
     except HTTPException as e:
         raise HTTPException(

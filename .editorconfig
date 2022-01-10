@@ -17,4 +17,4 @@ indent_size = 4
 indent_style = tab
 
 [settings]
-known_third_party = asgi_lifespan,bson,docs,fastapi,httpx,models,motor,plotly,pydantic,pytest,requests,routers,settings,streamlit
+known_third_party = asgi_lifespan,bs4,bson,docs,fastapi,geopy,httpx,hydralit,hydralit_components,mailjet_rest,matplotlib,models,motor,pandas,pdfkit,pydantic,pydeck,pytest,requests,routers,sentry_sdk,settings,streamlit,utils
