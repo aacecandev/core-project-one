@@ -4,6 +4,8 @@ from hydralit import HydraApp
 
 from app.accidents_app import AccidentsApp
 from app.home_app import HomeApp
+from app.login_app import LoginApp
+from app.signup import SignUpApp
 from app.user_app import UserApp
 
 st.set_page_config(
@@ -41,5 +43,19 @@ if __name__ == "__main__":
     app.add_app("Accidents", icon="🚔", app=AccidentsApp(title="Accidents"))
     app.add_app("User Area", icon="👤", app=UserApp(title="User Area"))
 
+    app.add_app("Signup", icon="🛰️", app=SignUpApp(title="Signup"), is_unsecure=True)
+    app.add_app("Login", app=LoginApp(title="Login"), is_login=True)
+    app.enable_guest_access()
+    user_access_level, username = app.check_access()
+    if user_access_level > 0:
+        complex_nav = {
+            "Home": ["Home"],
+            "Accidents": ["Accidents"],
+            "User Area": ["User Area"],
+        }
+    else:
+        complex_nav = {
+            "Home": ["Home"],
+        }
     # run the whole lot
-    app.run()
+    app.run(complex_nav)
