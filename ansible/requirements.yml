@@ -1,0 +1,6 @@
+- src: 'geerlingguy.pip'
+  version: '2.1.0'
+  name: 'geerlingguy.pip'
+- src: 'geerlingguy.docker'
+  version: '4.1.2'
+  name: 'geerlingguy.docker'
