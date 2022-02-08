@@ -5,6 +5,35 @@ updates:
 
   - package-ecosystem: "github-actions"
     directory: "/"
+    target-branch: "main"
+    assignees:
+      - "aacecandev"
     schedule:
       # Check for updates to GitHub Actions every weekday
       interval: "daily"
+
+  # Maintain dependencies for pip on api
+  - package-ecosystem: "pip"
+    directory: "/app/api"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    allow:
+      - dependency-type: "all"
+    assignees:
+      - "aacecandev"
+    commit-message:
+      prefix: "[Api]"
+
+  # Maintain dependencies for pip on dashboard
+  - package-ecosystem: "pip"
+    directory: "/app/dashboard"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    allow:
+      - dependency-type: "all"
+    assignees:
+      - "aacecandev"
+    commit-message:
+      prefix: "[Dashboard]"
